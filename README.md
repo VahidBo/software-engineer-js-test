@@ -1,140 +1,46 @@
-# Albelli test
+# Getting Started with Create React App
 
-This repository contains a basic setup for a JavaScript project. 
-See "_System requirements_" below to get up
-and running! The "_Project outline_" section walks you through a basic
-rundown of the structure.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## The test
+## Available Scripts
 
-You will be working in a company where our customers purchase
-printed products. As such your expertise should not be restricted to
-developing applications, but also extend to understand the requirements
-of print and how to translate between the app and the print world and 
-vice versa.
+In the project directory, you can run:
 
-### Goal
+### `npm start`
 
-You should write a very simple application where there are two scenarios:
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-##### Scenario 1.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-* The user can select a photo file from his/her device and import it into the application
-* The user can position and scale this photo on a canvas. Important: Photo must always cover the full canvas.
-  * Correct:
+### `npm test`
 
-  ![correct](./doc/correct.png)
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-  * Not correct:
+### `npm run build`
 
-  ![not correct](./doc/not_correct.png)
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-* Hit a submit button which will generate the print description as described [below](https://github.com/albumprinter/software-engineer-js-test/tree/photo-editor#print-description)
- These instructions should be stored locally as a JSON file.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-##### Scenario 2.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-* The user can hit an import button which loads a previously saved JSON description
-* Upon loading, the application should show a canvas that contains the photo
-* Photo is scaled and positioned as expected according to the loaded print instructions
+### `npm run eject`
 
-#### Deliverables
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-Out of the box, the application already provides you some code to load
-and validate image files from your computer. You can take some inspiration
-here, or if you don't like the design approach of that code, feel free
-to show what you think is the "right approach" to code this application.
-Don't write code that just "get's the job done", write it as if was an
-application that you would have to maintain for years to come ;)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-It is by no means necessary to make this application look attractive or
-to spend a lot of time in providing the best interaction with the photo.
-If you need to add buttons to “_move photo left_”, "_move photo right_" or
-“_scale photo 50%_", "_scale photo 200%_” that is enough. It is about the
-_design of your code_, NOT the design of the application interface!
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-It is more important to show how you write (in your eyes) a maintainable
-application. Be prepared to explain the steps you took in a review of this test.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Don't forget to add the necessary documentations and tests.
+## Learn More
 
-#### Product canvas properties
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-At Albelli, we define the dimensions of our printed products in inches.
-For this application we will name the product “Canvas” (a single printable surface).
-This Canvas is a rectangle of 15” x 10” in size.
-
-A photo must always fill the full surface of the canvas (in other words:
-a photo must cover an area equal to or larger than 15” in width or 10” in height).
-
-A photo has the following properties: width, height, x and y (once more
-all in inches). X and Y describe the coordinates of the photo relative
-to the top-left position of its canvas.
-
-#### Print description
-
-The print description you will generate (in scenario #1 of your application)
-can be in any format of your liking, as an example you could consider
-the following output in JSON format:
-
-    {
-        "canvas": {
-            "width": 15
-            "height": 10,
-            "photo" : {
-                "id": “fileName”,
-                "width": 20,
-                "height": 20,
-                "x": -2.5,
-                "y": -5
-            }
-        }
-    }
-
-#### Rules
-
-Once you receive this test by e-mail please copy this repository to
-your own GitHub account.
-
-You can use any libraries / frameworks that make your life easier, but strictly speaking they are not necessary. 
-We are more interested in seeing how you would structure things.
- 
-Your application should run on the latest public version of Google Chrome.
-You don't have to worry about making your code work on any other browser, as
-such you are free to use anything that is supported by Chrome and not worry
-about cross-browser implementations.
-
-## Project outline
-
-The entry point for your JavaScript application is _./app/js/main.js_. The build script
-will ensure these get automatically built for use in your browser.
-
-The project uses SASS as a preprocessor for writing your styles (though you can
-write regular CSS inside a .scss file if you would like to). If you choose to use CSS,
-you can use _./app/css/main.scss_ as your entry point SASS file.
-
-Using `npm run build` all build output will be stored in the _./dist_ folder, this is
-automatically generated by the build script and its contents can be ignored.
-
-## System requirements
-
-In order to build the project you will need [Node.js](https://nodejs.org/en/).
-
-In the root of this repository, you can resolve all these dependencies via
-the command line using:
-
-    npm install
-    
-You can now start developing the application using Webpack by typing:
-
-    npm start
-    
-The following will happen:
-
- * All JavaScript is included and built for the browser
- * All SASS styles are converted into CSS
- * Your browser will open and run the application
- * File watchers are started
-
-You can add / remove / change files to in the source folder and your
-browser will automatically update to reflect the changes.
+To learn React, check out the [React documentation](https://reactjs.org/).
