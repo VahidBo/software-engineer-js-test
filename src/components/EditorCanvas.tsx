@@ -1,38 +1,29 @@
 import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
+import { useImageCoords } from "contexts";
 import { useEffect, useRef } from "react";
 import { CANVAS_HEIGHT, CANVAS_WIDTH } from "./constants";
-import { calculateImageCoordination, getImageRatio } from "./utils";
 
 interface CanvasProps {
-  image: File | null;
+  image: HTMLImageElement | null;
 }
 
 export function EditorCanvas({ image }: CanvasProps) {
   const canvas = useRef<HTMLCanvasElement | null>(null);
+  const { coords } = useImageCoords();
 
   useEffect(() => {
-    if (image) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const img = new Image();
-        img.onload = () => {
-          if (canvas.current) {
-            const ctx = canvas.current.getContext("2d");
-            const imageRatio = getImageRatio(img);
-            const { dx, dy, dw, dh } = calculateImageCoordination(imageRatio);
-            ctx?.drawImage(img, dx, dy, dw, dh);
-          }
-        };
-        img.src = reader.result as string;
-      };
-      reader.readAsDataURL(image);
+    if (canvas.current) {
+      const ctx = canvas.current.getContext("2d");
+      if (image && coords) {
+        const { dx, dy, dw, dh } = coords;
+        ctx?.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+        ctx?.drawImage(image, dx, dy, dw, dh);
+      }
     }
-  }, [image]);
+  }, [coords, image]);
 
   return (
     <Paper sx={{ p: 1 }} variant="outlined">
-      <Typography mb={1}>File Name: {image?.name || "-"}</Typography>
       <canvas ref={canvas} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
     </Paper>
   );
