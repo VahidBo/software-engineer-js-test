@@ -1,3 +1,4 @@
+import Stack from "@mui/material/Stack";
 import Paper from "@mui/material/Paper";
 import { useImageCoords } from "contexts";
 import { useEffect, useRef } from "react";
@@ -23,8 +24,10 @@ export function EditorCanvas({ image }: CanvasProps) {
   }, [coords, image]);
 
   return (
-    <Paper sx={{ p: 1 }} variant="outlined">
-      <canvas ref={canvas} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
-    </Paper>
+    <Stack>
+      <Paper sx={{ p: 1, "&": { margin: "auto" } }} variant="outlined">
+        <canvas ref={canvas} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
+      </Paper>
+    </Stack>
   );
 }

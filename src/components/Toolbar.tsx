@@ -1,9 +1,11 @@
+import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import { styled } from "@mui/material/styles";
 import { useImageCoords } from "contexts";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 import { calculateImageCoordination, getImageRatio } from "./utils";
+import { ActionButtons } from "./ActionButtons";
 
 const HiddenInput = styled("input")({
   display: "none",
@@ -36,12 +38,17 @@ export function Toolbar({ setImage }: ToolbarProps) {
 
   return (
     <Paper variant="outlined" sx={{ p: 1 }}>
-      <label htmlFor="upload-file-button">
-        <HiddenInput accept="image/*" id="upload-file-button" type="file" onChange={onFileChange} />
-        <Button variant="contained" component="span">
-          Upload Image
-        </Button>
-      </label>
+      <Stack direction="row">
+        <Stack flexGrow={1}>
+          <label htmlFor="upload-file-button">
+            <HiddenInput accept="image/*" id="upload-file-button" type="file" onChange={onFileChange} />
+            <Button variant="contained" component="span">
+              Upload Image
+            </Button>
+          </label>
+        </Stack>
+        <ActionButtons />
+      </Stack>
     </Paper>
   );
 }
