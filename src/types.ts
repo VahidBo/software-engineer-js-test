@@ -3,6 +3,7 @@ export type PrintableType = {
     width: number;
     height: number;
     photo: {
+      fileName: string;
       image: string | null;
       width: number;
       height: number;

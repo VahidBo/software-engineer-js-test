@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { useEditorCanvas } from "hooks";
@@ -8,10 +9,11 @@ interface CanvasProps {
 }
 
 export function EditorCanvas({ image }: CanvasProps) {
-  const { canvas } = useEditorCanvas(image);
+  const { canvas, fileName } = useEditorCanvas(image);
   return (
     <Stack>
       <Paper sx={{ p: 1, "&": { margin: "auto" } }} variant="outlined">
+        <Typography>File Name: {fileName || "-"}</Typography>
         <canvas ref={canvas} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />
       </Paper>
     </Stack>

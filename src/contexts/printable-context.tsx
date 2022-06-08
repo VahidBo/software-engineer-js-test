@@ -7,7 +7,8 @@ const PRINTABLE_DEFAULT_VALUE: PrintableType = {
     width: CANVAS_WIDTH_IN_INCHES,
     height: CANVAS_HEIGHT_IN_INCHES,
     photo: {
-      // TODO: We also can use file url instead of image.
+      // TODO: We also can use file url instead of image to reduce the JSON file size.
+      fileName: "",
       image: null,
       width: 0,
       height: 0,

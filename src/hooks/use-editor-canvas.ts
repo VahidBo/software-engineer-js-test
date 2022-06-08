@@ -7,7 +7,7 @@ export function useEditorCanvas(image: HTMLImageElement | null) {
   const {
     printable: {
       canvas: {
-        photo: { width: dw, height: dh, x: dx, y: dy },
+        photo: { width: dw, height: dh, x: dx, y: dy, fileName },
       },
     },
   } = usePrintable();
@@ -22,5 +22,5 @@ export function useEditorCanvas(image: HTMLImageElement | null) {
     }
   }, [dh, dw, dx, dy, image]);
 
-  return { canvas };
+  return { canvas, fileName };
 }
