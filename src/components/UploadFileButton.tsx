@@ -13,7 +13,7 @@ export interface UploadFileButtonProps extends InputHTMLAttributes<HTMLInputElem
 export function UploadFileButton({ label, ...inputProps }: UploadFileButtonProps) {
   return (
     <label htmlFor={`upload-file-button-${label}`}>
-      <HiddenInput id={`upload-file-button-${label}`} type="file" {...inputProps} />
+      <HiddenInput id={`upload-file-button-${label}`} type="file" data-testid="upload-input" {...inputProps} />
       <Button variant="contained" component="span">
         {label}
       </Button>
