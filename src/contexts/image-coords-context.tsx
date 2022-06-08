@@ -22,6 +22,5 @@ type ImageCoordsProviderProps = PropsWithChildren<{}>;
 export function ImageCoordsProvider({ children }: ImageCoordsProviderProps) {
   const [coords, setCoords] = useState<ImageCoordinationsType>();
   const value = { coords, setCoords };
-  console.log("~ coords", coords);
   return <ImageCoordsContext.Provider value={value}>{children}</ImageCoordsContext.Provider>;
 }
