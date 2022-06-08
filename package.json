@@ -43,7 +43,7 @@
     "prettier": "^2.6.2"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,html,css}": [
+    "*.{js,jsx,ts,tsx,html,css}": [
       "yarn lint",
       "yarn prettier"
     ]
