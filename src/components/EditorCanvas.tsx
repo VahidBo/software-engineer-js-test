@@ -11,7 +11,7 @@ interface CanvasProps {
 export function EditorCanvas({ image }: CanvasProps) {
   const { canvas, fileName } = useEditorCanvas(image);
   return (
-    <Stack>
+    <Stack data-testid="editor-canvas">
       <Paper sx={{ p: 1, "&": { margin: "auto" } }} variant="outlined">
         <Typography>File Name: {fileName || "-"}</Typography>
         <canvas ref={canvas} width={CANVAS_WIDTH} height={CANVAS_HEIGHT} />

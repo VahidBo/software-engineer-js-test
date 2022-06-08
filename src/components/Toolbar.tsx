@@ -10,7 +10,7 @@ export interface ToolbarProps {
 
 export function Toolbar({ setImage }: ToolbarProps) {
   return (
-    <Paper variant="outlined" sx={{ p: 1 }}>
+    <Paper variant="outlined" sx={{ p: 1 }} data-testid="toolbar">
       <Stack direction="row">
         <ToolbarIOSection setImage={setImage} />
         <ActionButtons />
