@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "prettier": "prettier --write . --ignore-unknown",
     "lint": "eslint . --ext .js,.ts,.tsx --max-warnings 0",
     "type-check": "tsc --pretty --noEmit",
