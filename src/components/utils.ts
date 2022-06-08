@@ -1,4 +1,4 @@
-import { CANVAS_HEIGHT, CANVAS_RATIO, CANVAS_WIDTH } from "./constants";
+import { CANVAS_HEIGHT, CANVAS_RATIO, CANVAS_WIDTH } from "../constants";
 
 export function calculateImageCoordination(imageRatio: number): { dx: number; dy: number; dw: number; dh: number } {
   let dx, dy, dw, dh;

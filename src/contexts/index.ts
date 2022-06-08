@@ -1,1 +1,1 @@
-export * from "./image-coords-context";
+export * from "./printable-context";

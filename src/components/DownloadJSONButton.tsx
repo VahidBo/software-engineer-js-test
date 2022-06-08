@@ -1,11 +1,11 @@
 import Button from "@mui/material/Button";
-import { useImageCoords } from "contexts";
+import { usePrintable } from "contexts";
 import { useCallback } from "react";
 import { exportJSON } from "utils";
 
 export function DownloadJSONButton() {
-  const { coords } = useImageCoords();
-  const downloadJSONFile = useCallback(() => exportJSON(coords || {}, "sample-file.json"), [coords]); // TODO: file name must be modified
+  const { printable } = usePrintable();
+  const downloadJSONFile = useCallback(() => exportJSON(printable, "sample-file.json"), [printable]);
   return (
     <Button variant="contained" onClick={downloadJSONFile}>
       Download JSON

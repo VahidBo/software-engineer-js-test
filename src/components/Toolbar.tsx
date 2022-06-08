@@ -2,7 +2,7 @@ import Paper from "@mui/material/Paper";
 import Stack from "@mui/material/Stack";
 import { Dispatch, SetStateAction } from "react";
 import { ActionButtons } from "./ActionButtons";
-import { ToolbarIOSection } from "./ToolbarIOSection";
+import { ToolbarIOSection } from "./IOSection";
 
 export interface ToolbarProps {
   setImage: Dispatch<SetStateAction<HTMLImageElement | null>>;
