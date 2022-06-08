@@ -1,6 +1,6 @@
 import { CANVAS_HEIGHT, CANVAS_RATIO, CANVAS_WIDTH } from "../constants";
 
-export function calculateImageCoordination(imageRatio: number): { dx: number; dy: number; dw: number; dh: number } {
+export function calculateImageCoordinations(imageRatio: number): { dx: number; dy: number; dw: number; dh: number } {
   let dx, dy, dw, dh;
   if (imageRatio > CANVAS_RATIO) {
     dw = CANVAS_HEIGHT * imageRatio;
@@ -14,8 +14,4 @@ export function calculateImageCoordination(imageRatio: number): { dx: number; dy
     dy = (CANVAS_HEIGHT - dh) / 2;
   }
   return { dx, dy, dw, dh };
-}
-
-export function getImageRatio(image: HTMLImageElement): number {
-  return image.naturalWidth / image.naturalHeight;
 }

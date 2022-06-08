@@ -1,4 +1,4 @@
-import { calculateImageCoordination, getImageRatio } from "components/utils";
+import { calculateImageCoordinations, getImageRatio } from "utils";
 import { usePrintable } from "contexts";
 import produce from "immer";
 import { ChangeEvent } from "react";
@@ -14,7 +14,7 @@ export function useIOSection(setImage: (image: HTMLImageElement | null) => void)
         const img = new Image();
         img.onload = () => {
           const imageRatio = getImageRatio(img);
-          const { dx, dy, dw, dh } = calculateImageCoordination(imageRatio);
+          const { dx, dy, dw, dh } = calculateImageCoordinations(imageRatio);
           setPrintable(
             produce((p) => {
               p.canvas.photo.image = reader.result as string;
